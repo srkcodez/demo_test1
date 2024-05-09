@@ -1,0 +1,13 @@
+{
+  "shell_port": 42771,
+  "iopub_port": 48139,
+  "stdin_port": 48601,
+  "control_port": 52271,
+  "hb_port": 51531,
+  "ip": "127.0.0.1",
+  "key": "bfadc9d8-1f9535c4d88bd87ba4375834",
+  "transport": "tcp",
+  "signature_scheme": "hmac-sha256",
+  "kernel_name": "python3",
+  "jupyter_session": "/home/SRKrishna/sample files/knn new.ipynb"
+}

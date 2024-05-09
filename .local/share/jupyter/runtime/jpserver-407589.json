@@ -1,0 +1,13 @@
+{
+  "base_url": "/",
+  "hostname": "0.0.0.0",
+  "password": false,
+  "pid": 407589,
+  "port": 8892,
+  "root_dir": "/home/SRKrishna",
+  "secure": false,
+  "sock": "",
+  "token": "7c3b9edf791f0f2614cf0916b12f75bc5bca4ff9d9dd773a",
+  "url": "http://master.intelunnati.com:8892/",
+  "version": "2.14.0"
+}

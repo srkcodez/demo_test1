@@ -1,0 +1,1148 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; object-src 'none'; script-src resource: chrome:; connect-src https:; img-src https: data: blob: chrome:; style-src 'unsafe-inline';">
+    <meta name="color-scheme" content="light dark">
+    <title data-l10n-id="newtab-page-title"></title>
+    <link rel="icon" type="image/png" href="chrome://branding/content/icon32.png"/>
+    <link rel="localization" href="branding/brand.ftl" />
+    <link rel="localization" href="toolkit/branding/brandings.ftl" />
+    <link rel="localization" href="browser/newtab/newtab.ftl" />
+    <link rel="stylesheet" href="chrome://browser/content/contentSearchUI.css" />
+    <link rel="stylesheet" href="chrome://activity-stream/content/css/activity-stream.css" />
+  </head>
+  <!-- Cached: Tue, 07 May 2024 16:45:33 GMT -->
+  <body class="activity-stream">
+    <div id="header-asrouter-container" role="presentation"></div>
+    <div id="root">
+      <div><span><button class="icon icon-settings personalize-button" data-l10n-id="newtab-personalize-icon-label"></button><div class="customize-menu" role="dialog" data-l10n-id="newtab-personalize-dialog-label"><button class="close-button" data-l10n-id="newtab-custom-close-button"></button><div></div><div class="home-section"><div id="shortcuts-section" class="section"><label class="switch"><input type="checkbox" id="shortcuts-toggle" checked="" preference="feeds.topsites" aria-labelledby="custom-shortcuts-title" aria-describedby="custom-shortcuts-subtitle" eventSource="TOP_SITES"/><span class="slider" role="presentation"></span></label><div><h2 id="custom-shortcuts-title" class="title"><label for="shortcuts-toggle" data-l10n-id="newtab-custom-shortcuts-title"></label></h2><p id="custom-shortcuts-subtitle" class="subtitle" data-l10n-id="newtab-custom-shortcuts-subtitle"></p><div class="more-info-top-wrapper"><div class="more-information"><select id="row-selector" class="selector" name="row-count" preference="topSitesRows" aria-labelledby="custom-shortcuts-title"><option selected="" value="1" data-l10n-id="newtab-custom-row-selector" data-l10n-args="{&quot;num&quot;: 1}"></option><option value="2" data-l10n-id="newtab-custom-row-selector" data-l10n-args="{&quot;num&quot;: 2}"></option><option value="3" data-l10n-id="newtab-custom-row-selector" data-l10n-args="{&quot;num&quot;: 3}"></option><option value="4" data-l10n-id="newtab-custom-row-selector" data-l10n-args="{&quot;num&quot;: 4}"></option></select><div class="check-wrapper" role="presentation"><input type="checkbox" id="sponsored-shortcuts" class="sponsored-checkbox" checked="" preference="showSponsoredTopSites" eventSource="SPONSORED_TOP_SITES"/><label class="sponsored" for="sponsored-shortcuts" data-l10n-id="newtab-custom-sponsored-sites"></label></div></div></div></div></div><div id="pocket-section" class="section"><label class="switch"><input type="checkbox" id="pocket-toggle" checked="" preference="feeds.section.topstories" aria-labelledby="custom-pocket-title" aria-describedby="custom-pocket-subtitle" eventSource="TOP_STORIES"/><span class="slider" role="presentation"></span></label><div><h2 id="custom-pocket-title" class="title"><label for="pocket-toggle" data-l10n-id="newtab-custom-pocket-title"></label></h2><p id="custom-pocket-subtitle" class="subtitle" data-l10n-id="newtab-custom-pocket-subtitle"></p></div></div><div id="recent-section" class="section"><label class="switch"><input type="checkbox" id="highlights-toggle" preference="feeds.section.highlights" eventSource="HIGHLIGHTS" aria-labelledby="custom-recent-title" aria-describedby="custom-recent-subtitle"/><span class="slider" role="presentation"></span></label><div><h2 id="custom-recent-title" class="title"><label for="highlights-toggle" data-l10n-id="newtab-custom-recent-title"></label></h2><p id="custom-recent-subtitle" class="subtitle" data-l10n-id="newtab-custom-recent-subtitle"></p></div></div><span class="divider" role="separator"></span><div><button id="settings-link" class="external-link" data-l10n-id="newtab-custom-settings"></button></div></div></div></span><div class="outer-wrapper ds-outer-wrapper-search-alignment ds-outer-wrapper-breakpoint-override visible-logo"><main class=""><div class="non-collapsible-section"><div class="search-wrapper"><div class="logo-and-wordmark"><div class="logo"></div><div class="wordmark"></div></div><div class="search-inner-wrapper"><button class="search-handoff-button" data-l10n-id="newtab-search-box-handoff-input" data-l10n-args="{&quot;engine&quot;: &quot;Google&quot;}" tabindex="-1"><div class="fake-textbox" data-l10n-id="newtab-search-box-handoff-text" data-l10n-args="{&quot;engine&quot;: &quot;Google&quot;}"></div><input type="search" class="fake-editable" tabindex="-1" aria-hidden="true"/><div class="fake-caret"></div></button></div></div></div><div class="body-wrapper on"><div class="discovery-stream ds-layout"><div class="ds-column ds-column-12"><div class="ds-column-grid"><div><div class="ds-top-sites"><section class="collapsible-section top-sites" data-section-id="topsites"><div class="section-top-bar"><h3 class="section-title-container " style="visibility:hidden"><span class="section-title"><span data-l10n-id="newtab-section-header-topsites"></span></span><span class="learn-more-link-wrapper"></span></h3></div><div><ul class="top-sites-list"><li class="top-site-outer placeholder "><div class="top-site-inner"><a class="top-site-button" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper"><div class=""></div></div></div><div class="title"><span dir="auto"><br/><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></span></div></a><button aria-haspopup="dialog" class="context-menu-button edit-button icon" data-l10n-id="newtab-menu-topsites-placeholder-tooltip"></button><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer placeholder "><div class="top-site-inner"><a class="top-site-button" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper"><div class=""></div></div></div><div class="title"><span dir="auto"><br/><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></span></div></a><button aria-haspopup="dialog" class="context-menu-button edit-button icon" data-l10n-id="newtab-menu-topsites-placeholder-tooltip"></button><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer"><div class="top-site-inner"><a class="top-site-button" href="https://www.youtube.com/" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper" data-fallback="Y"><div class="top-site-icon rich-icon" style="background-image:url(chrome://activity-stream/content/data/content/tippytop/images/youtube-com@2x.png)"></div></div></div><div class="title"><span dir="auto">YouTube<span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></span></div></a><div><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;YouTube&quot;}" class="context-menu-button icon"></button></div><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer"><div class="top-site-inner"><a class="top-site-button" href="https://www.facebook.com/" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper" data-fallback="F"><div class="top-site-icon rich-icon" style="background-image:url(chrome://activity-stream/content/data/content/tippytop/images/facebook-com@2x.png)"></div></div></div><div class="title"><span dir="auto">Facebook<span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></span></div></a><div><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Facebook&quot;}" class="context-menu-button icon"></button></div><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer"><div class="top-site-inner"><a class="top-site-button" href="https://www.wikipedia.org/" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper" data-fallback="W"><div class="top-site-icon rich-icon" style="background-image:url(chrome://activity-stream/content/data/content/tippytop/images/wikipedia-org@2x.png)"></div></div></div><div class="title"><span dir="auto">Wikipedia<span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></span></div></a><div><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Wikipedia&quot;}" class="context-menu-button icon"></button></div><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer"><div class="top-site-inner"><a class="top-site-button" href="https://www.reddit.com/" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper" data-fallback="R"><div class="top-site-icon rich-icon" style="background-image:url(chrome://activity-stream/content/data/content/tippytop/images/reddit-com@2x.png)"></div></div></div><div class="title"><span dir="auto">Reddit<span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></span></div></a><div><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Reddit&quot;}" class="context-menu-button icon"></button></div><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer hide-for-narrow"><div class="top-site-inner"><a class="top-site-button" href="https://twitter.com/" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper" data-fallback="T"><div class="top-site-icon rich-icon" style="background-image:url(chrome://activity-stream/content/data/content/tippytop/images/twitter-com@2x.png)"></div></div></div><div class="title"><span dir="auto">Twitter<span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></span></div></a><div><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Twitter&quot;}" class="context-menu-button icon"></button></div><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer placeholder hide-for-narrow"><div class="top-site-inner"><a class="top-site-button" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper"><div class=""></div></div></div><div class="title"><span dir="auto"><br/><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></span></div></a><button aria-haspopup="dialog" class="context-menu-button edit-button icon" data-l10n-id="newtab-menu-topsites-placeholder-tooltip"></button><div class="topsite-impression-observer"></div></div></li></ul><div class="edit-topsites-wrapper"></div></div></section></div></div></div></div><style data-styles="[[null]]"></style></div><section class="collapsible-section ds-layout" data-section-id="topstories"><div class="section-top-bar"><h3 class="section-title-container "><span class="section-title"><span data-l10n-args="{&quot;provider&quot;:&quot;Pocket&quot;}" data-l10n-id="newtab-section-header-pocket"></span></span><span class="learn-more-link-wrapper"><span class="learn-more-link"><a href="https://getpocket.com/firefox/new_tab_learn_more" data-l10n-id="newtab-pocket-learn-more"></a></span></span></h3></div><div><div class="discovery-stream ds-layout"><div class="ds-column ds-column-12"><div class="ds-column-grid"><div><div><div class="ds-card-grid    ds-card-grid-include-descriptions "><div class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3"><a href="https://www.vogue.in/content/signs-that-are-typically-seen-in-a-toxic-relationship?utm_source=pocket-newtab-en-intl" class="ds-card-link"><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/4decb1fa-ac1b-4be5-9b20-a326f932167b.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F4decb1fa-ac1b-4be5-9b20-a326f932167b.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F4decb1fa-ac1b-4be5-9b20-a326f932167b.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F4decb1fa-ac1b-4be5-9b20-a326f932167b.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F4decb1fa-ac1b-4be5-9b20-a326f932167b.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F4decb1fa-ac1b-4be5-9b20-a326f932167b.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F4decb1fa-ac1b-4be5-9b20-a326f932167b.jpeg 404w"/></picture></div><div class="meta"><div class="info-wrap"><p class="source clamp">Vogue</p><header title="5 Emotional Dependency Signs That Will Help You Determine If You Need to Work on Yourself" class="title clamp">5 Emotional Dependency Signs That Will Help You Determine If You Need to Work on Yourself</header><p class="excerpt clamp">Falling in love is one of the most beautiful feelings there is. You’re nervous, the butterflies in your stomach are going crazy and you don’t want to be without him/her for a second. It’s like a high of emotions that is addictive and you need more of it.</p></div></div><div class="impression-observer"></div></a><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;5 Emotional Dependency Signs That Will Help You Determine If You Need to Work on Yourself&quot;}" class="context-menu-button icon"></button></div></div></div></div><div class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3"><a href="https://www.business-standard.com/finance/personal-finance/beware-of-parcel-fraud-suspect-a-scam-call-disengage-immediately-124043000976_1.html?utm_source=pocket-newtab-en-intl" class="ds-card-link"><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/60d385d6-efdf-4832-aaa6-3f957155c579.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F60d385d6-efdf-4832-aaa6-3f957155c579.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F60d385d6-efdf-4832-aaa6-3f957155c579.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F60d385d6-efdf-4832-aaa6-3f957155c579.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F60d385d6-efdf-4832-aaa6-3f957155c579.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F60d385d6-efdf-4832-aaa6-3f957155c579.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F60d385d6-efdf-4832-aaa6-3f957155c579.jpeg 404w"/></picture></div><div class="meta"><div class="info-wrap"><p class="source clamp">Business Standard</p><header title="Beware of Parcel Fraud: Suspect a Scam Call? Disengage Immediately" class="title clamp">Beware of Parcel Fraud: Suspect a Scam Call? Disengage Immediately</header><p class="excerpt clamp">Shreyanshi Singh (name changed on request), a 32-year-old who works with an advertising agency in Delhi, recently received a call during work hours.</p></div></div><div class="impression-observer"></div></a><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Beware of Parcel Fraud: Suspect a Scam Call? Disengage Immediately&quot;}" class="context-menu-button icon"></button></div></div></div></div><div class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3"><a href="https://www.fortuneindia.com/long-reads/the-brief-recalibration-of-tata/116677?utm_source=pocket-newtab-en-intl" class="ds-card-link"><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/64f1200b-fe7d-4677-9fee-86a55414ce24.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F64f1200b-fe7d-4677-9fee-86a55414ce24.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F64f1200b-fe7d-4677-9fee-86a55414ce24.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F64f1200b-fe7d-4677-9fee-86a55414ce24.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F64f1200b-fe7d-4677-9fee-86a55414ce24.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F64f1200b-fe7d-4677-9fee-86a55414ce24.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F64f1200b-fe7d-4677-9fee-86a55414ce24.jpeg 404w"/></picture></div><div class="meta"><div class="info-wrap"><p class="source clamp">Fortune India</p><header title="The Brief: Recalibration of Tata" class="title clamp">The Brief: Recalibration of Tata</header><p class="excerpt clamp">Tata Group attempts mergers and demergers in companies to bring sharper focus on businesses.</p></div></div><div class="impression-observer"></div></a><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;The Brief: Recalibration of Tata&quot;}" class="context-menu-button icon"></button></div></div></div></div><div class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3"><a href="https://psyche.co/guides/how-to-use-kitchen-therapy-to-nourish-your-sense-of-self?utm_source=pocket-newtab-en-intl" class="ds-card-link"><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://images.aeonmedia.co/images/8a20e692-e6c8-4b87-9a5f-37427137e162/sq-final-gettyimages-935951790.jpg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fimages.aeonmedia.co%2Fimages%2F8a20e692-e6c8-4b87-9a5f-37427137e162%2Fsq-final-gettyimages-935951790.jpg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fimages.aeonmedia.co%2Fimages%2F8a20e692-e6c8-4b87-9a5f-37427137e162%2Fsq-final-gettyimages-935951790.jpg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fimages.aeonmedia.co%2Fimages%2F8a20e692-e6c8-4b87-9a5f-37427137e162%2Fsq-final-gettyimages-935951790.jpg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fimages.aeonmedia.co%2Fimages%2F8a20e692-e6c8-4b87-9a5f-37427137e162%2Fsq-final-gettyimages-935951790.jpg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fimages.aeonmedia.co%2Fimages%2F8a20e692-e6c8-4b87-9a5f-37427137e162%2Fsq-final-gettyimages-935951790.jpg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fimages.aeonmedia.co%2Fimages%2F8a20e692-e6c8-4b87-9a5f-37427137e162%2Fsq-final-gettyimages-935951790.jpg 404w"/></picture></div><div class="meta"><div class="info-wrap"><p class="source clamp">Psyche</p><header title="How to Use Cooking As a Form of Therapy" class="title clamp">How to Use Cooking As a Form of Therapy</header><p class="excerpt clamp">No matter your culinary skills, spend some reflective time in the kitchen to nourish and renew your sense of self.</p></div></div><div class="impression-observer"></div></a><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;How to Use Cooking As a Form of Therapy&quot;}" class="context-menu-button icon"></button></div></div></div></div><div class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3"><a href="https://www.cnbc.com/2024/05/06/career-consultant-says-gen-z-are-misusing-ai-to-generate-cover-letters.html?utm_source=pocket-newtab-en-intl" class="ds-card-link"><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/f70ffaf0-15ce-4a13-824a-f70397b7e3c7.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Ff70ffaf0-15ce-4a13-824a-f70397b7e3c7.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Ff70ffaf0-15ce-4a13-824a-f70397b7e3c7.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Ff70ffaf0-15ce-4a13-824a-f70397b7e3c7.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Ff70ffaf0-15ce-4a13-824a-f70397b7e3c7.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Ff70ffaf0-15ce-4a13-824a-f70397b7e3c7.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Ff70ffaf0-15ce-4a13-824a-f70397b7e3c7.jpeg 404w"/></picture></div><div class="meta"><div class="info-wrap"><p class="source clamp">CNBC</p><header title="‘Exact Same Cover Letters Word for Word’: Career Consultant Says Gen Z Are Misusing AI" class="title clamp">‘Exact Same Cover Letters Word for Word’: Career Consultant Says Gen Z Are Misusing AI</header><p class="excerpt clamp">A career consultant said employers are receiving &quot;identical&quot; cover letters from Gen Z generated by ChatGPT: &quot;It&#x27;s not being used in the right way.&quot;</p></div></div><div class="impression-observer"></div></a><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;‘Exact Same Cover Letters Word for Word’: Career Consultant Says Gen Z Are Misusing AI&quot;}" class="context-menu-button icon"></button></div></div></div></div><div class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3"><a href="https://www.bbc.com/news/world-asia-india-68553175?utm_source=pocket-newtab-en-intl" class="ds-card-link"><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/dc7dee15-8198-4b55-98f3-08509b8186bc.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fdc7dee15-8198-4b55-98f3-08509b8186bc.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fdc7dee15-8198-4b55-98f3-08509b8186bc.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fdc7dee15-8198-4b55-98f3-08509b8186bc.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fdc7dee15-8198-4b55-98f3-08509b8186bc.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fdc7dee15-8198-4b55-98f3-08509b8186bc.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fdc7dee15-8198-4b55-98f3-08509b8186bc.jpeg 404w"/></picture></div><div class="meta"><div class="info-wrap"><p class="source clamp">BBC</p><header title="Bollywood Meets Ballots: Reel and Real in Indian Elections" class="title clamp">Bollywood Meets Ballots: Reel and Real in Indian Elections</header><p class="excerpt clamp">&quot;All of Kashmir was, is and will remain a part of India,&quot; says actor Kiran Karmarkar in a recent hit film on the government&#x27;s 2019 decision to revoke Indian-administered Kashmir&#x27;s autonomy.</p></div></div><div class="impression-observer"></div></a><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Bollywood Meets Ballots: Reel and Real in Indian Elections&quot;}" class="context-menu-button icon"></button></div></div></div></div><div class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3"><a href="https://www.theguardian.com/games/2024/may/03/dungeons-and-dragons-wizards-of-the-coast?utm_source=pocket-newtab-en-intl" class="ds-card-link"><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/845f030d-cfa2-476f-8176-4dfa3276b000.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F845f030d-cfa2-476f-8176-4dfa3276b000.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F845f030d-cfa2-476f-8176-4dfa3276b000.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F845f030d-cfa2-476f-8176-4dfa3276b000.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F845f030d-cfa2-476f-8176-4dfa3276b000.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F845f030d-cfa2-476f-8176-4dfa3276b000.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F845f030d-cfa2-476f-8176-4dfa3276b000.jpeg 404w"/></picture></div><div class="meta"><div class="info-wrap"><p class="source clamp">The Guardian</p><header title="Stop Trying to Turn Dungeons &amp; Dragons Into a Marvel-Esque Cash Cow – It Won’t Work" class="title clamp">Stop Trying to Turn Dungeons &amp; Dragons Into a Marvel-Esque Cash Cow – It Won’t Work</header><p class="excerpt clamp">The words hit players of the world’s favourite tabletop role playing game like a magic missile straight to the heart.</p></div></div><div class="impression-observer"></div></a><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Stop Trying to Turn Dungeons &amp; Dragons Into a Marvel-Esque Cash Cow – It Won’t Work&quot;}" class="context-menu-button icon"></button></div></div></div></div><div class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3"><a href="https://restofworld.org/2024/dead-relatives-ai-deepfake-india/?utm_source=pocket-newtab-en-intl" class="ds-card-link"><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/eec652f8-9c84-4f7e-91f3-d9aeabd35b54.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Feec652f8-9c84-4f7e-91f3-d9aeabd35b54.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Feec652f8-9c84-4f7e-91f3-d9aeabd35b54.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Feec652f8-9c84-4f7e-91f3-d9aeabd35b54.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Feec652f8-9c84-4f7e-91f3-d9aeabd35b54.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Feec652f8-9c84-4f7e-91f3-d9aeabd35b54.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Feec652f8-9c84-4f7e-91f3-d9aeabd35b54.jpeg 404w"/></picture></div><div class="meta"><div class="info-wrap"><p class="source clamp">Rest of World</p><header title="Indian Politicians Are Bringing the Dead on the Campaign Trail, With Help From AI" class="title clamp">Indian Politicians Are Bringing the Dead on the Campaign Trail, With Help From AI</header><p class="excerpt clamp">Last month, movie star-turned-politician Vijay Vasanth was campaigning in an open jeep under an unforgiving sun in the sleepy fishing town of Kanniyakumari, the southernmost tip of the Indian mainland. He periodically waved to the fisherfolk lined up on either side of the street.</p></div></div><div class="impression-observer"></div></a><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Indian Politicians Are Bringing the Dead on the Campaign Trail, With Help From AI&quot;}" class="context-menu-button icon"></button></div></div></div></div><div class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3"><a href="https://www.newyorker.com/news/essay/shibboleth-the-role-of-words-in-the-campus-protests?utm_source=pocket-newtab-en-intl" class="ds-card-link"><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/97994cb2-4537-463b-be48-18fc57ed0396.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F97994cb2-4537-463b-be48-18fc57ed0396.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F97994cb2-4537-463b-be48-18fc57ed0396.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F97994cb2-4537-463b-be48-18fc57ed0396.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F97994cb2-4537-463b-be48-18fc57ed0396.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F97994cb2-4537-463b-be48-18fc57ed0396.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F97994cb2-4537-463b-be48-18fc57ed0396.jpeg 404w"/></picture></div><div class="meta"><div class="info-wrap"><p class="source clamp">The New Yorker</p><header title="Shibboleth" class="title clamp">Shibboleth</header><p class="excerpt clamp">A philosophy without a politics is common enough. Aesthetes, ethicists, novelists—all may be easily critiqued and found wanting on this basis. But there is also the danger of a politics without a philosophy.</p></div></div><div class="impression-observer"></div></a><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Shibboleth&quot;}" class="context-menu-button icon"></button></div></div></div></div><div class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3"><a href="https://www.nature.com/articles/d41586-024-01284-1?utm_source=pocket-newtab-en-intl" class="ds-card-link"><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://media.nature.com/lw1200/magazine-assets/d41586-024-01284-1/d41586-024-01284-1_27039006.jpg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.nature.com%2Flw1200%2Fmagazine-assets%2Fd41586-024-01284-1%2Fd41586-024-01284-1_27039006.jpg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.nature.com%2Flw1200%2Fmagazine-assets%2Fd41586-024-01284-1%2Fd41586-024-01284-1_27039006.jpg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.nature.com%2Flw1200%2Fmagazine-assets%2Fd41586-024-01284-1%2Fd41586-024-01284-1_27039006.jpg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.nature.com%2Flw1200%2Fmagazine-assets%2Fd41586-024-01284-1%2Fd41586-024-01284-1_27039006.jpg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.nature.com%2Flw1200%2Fmagazine-assets%2Fd41586-024-01284-1%2Fd41586-024-01284-1_27039006.jpg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.nature.com%2Flw1200%2Fmagazine-assets%2Fd41586-024-01284-1%2Fd41586-024-01284-1_27039006.jpg 404w"/></picture></div><div class="meta"><div class="info-wrap"><p class="source clamp">Nature</p><header title="Scientists Tried to Give People COVID — and Failed" class="title clamp">Scientists Tried to Give People COVID — and Failed</header><p class="excerpt clamp">Researchers deliberately infect participants with SARS-CoV-2 in ‘challenge’ trials — but high levels of immunity complicate efforts to test vaccines and treatments.</p></div></div><div class="impression-observer"></div></a><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Scientists Tried to Give People COVID — and Failed&quot;}" class="context-menu-button icon"></button></div></div></div></div><div class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3"><a href="https://www.filmcompanion.in/features/indepth-stories/the-misogyny-in-mass-telugu-cinema-family-star-animal-tillu-square-vijay-deverakonda-amazon-prime-video?utm_source=pocket-newtab-en-intl" class="ds-card-link"><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/600f8186-e378-4b32-8f2c-3ba43bc1377b.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F600f8186-e378-4b32-8f2c-3ba43bc1377b.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F600f8186-e378-4b32-8f2c-3ba43bc1377b.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F600f8186-e378-4b32-8f2c-3ba43bc1377b.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F600f8186-e378-4b32-8f2c-3ba43bc1377b.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F600f8186-e378-4b32-8f2c-3ba43bc1377b.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F600f8186-e378-4b32-8f2c-3ba43bc1377b.jpeg 404w"/></picture></div><div class="meta"><div class="info-wrap"><p class="source clamp">Film Companion</p><header title="The Misogyny in Mass Telugu Cinema" class="title clamp">The Misogyny in Mass Telugu Cinema</header><p class="excerpt clamp">It’s increasingly apparent that mainstream Telugu cinema has a sexism problem, one that has roots in the past, one that becomes more visible as its audiences expand and grow more discerning.</p></div></div><div class="impression-observer"></div></a><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;The Misogyny in Mass Telugu Cinema&quot;}" class="context-menu-button icon"></button></div></div></div></div><div class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3"><a href="https://indianexpress.com/article/explained/explained-global/indians-germany-largest-community-international-students-9311803/?utm_source=pocket-newtab-en-intl" class="ds-card-link"><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/031cd222-52b3-402e-81c0-71d0854a9d19.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F031cd222-52b3-402e-81c0-71d0854a9d19.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F031cd222-52b3-402e-81c0-71d0854a9d19.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F031cd222-52b3-402e-81c0-71d0854a9d19.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F031cd222-52b3-402e-81c0-71d0854a9d19.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F031cd222-52b3-402e-81c0-71d0854a9d19.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F031cd222-52b3-402e-81c0-71d0854a9d19.jpeg 404w"/></picture></div><div class="meta"><div class="info-wrap"><p class="source clamp">The Indian Express</p><header title="How Indians Became Germany’s Largest Community of International Students" class="title clamp">How Indians Became Germany’s Largest Community of International Students</header><p class="excerpt clamp">A record 43,000 students are presently enrolled in German universities. Here is why Germany has emerged as a top destination for Indian studentds.</p></div></div><div class="impression-observer"></div></a><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;How Indians Became Germany’s Largest Community of International Students&quot;}" class="context-menu-button icon"></button></div></div></div></div><div class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3"><a href="https://www.theverge.com/2024/5/4/24144763/ai-chatbot-friends-character-teens?utm_source=pocket-newtab-en-intl" class="ds-card-link"><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://cdn.vox-cdn.com/thumbor/4Z51Hk5L0WdVH2VKPLPOV5iL8yw=/0x0:2040x1360/1200x628/filters:focal(1081x719:1082x720)/cdn.vox-cdn.com/uploads/chorus_asset/file/25425111/247098_Teens_and_Character.AI_ASu.jpg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fcdn.vox-cdn.com%2Fthumbor%2F4Z51Hk5L0WdVH2VKPLPOV5iL8yw%3D%2F0x0%3A2040x1360%2F1200x628%2Ffilters%3Afocal(1081x719%3A1082x720)%2Fcdn.vox-cdn.com%2Fuploads%2Fchorus_asset%2Ffile%2F25425111%2F247098_Teens_and_Character.AI_ASu.jpg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fcdn.vox-cdn.com%2Fthumbor%2F4Z51Hk5L0WdVH2VKPLPOV5iL8yw%3D%2F0x0%3A2040x1360%2F1200x628%2Ffilters%3Afocal(1081x719%3A1082x720)%2Fcdn.vox-cdn.com%2Fuploads%2Fchorus_asset%2Ffile%2F25425111%2F247098_Teens_and_Character.AI_ASu.jpg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fcdn.vox-cdn.com%2Fthumbor%2F4Z51Hk5L0WdVH2VKPLPOV5iL8yw%3D%2F0x0%3A2040x1360%2F1200x628%2Ffilters%3Afocal(1081x719%3A1082x720)%2Fcdn.vox-cdn.com%2Fuploads%2Fchorus_asset%2Ffile%2F25425111%2F247098_Teens_and_Character.AI_ASu.jpg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fcdn.vox-cdn.com%2Fthumbor%2F4Z51Hk5L0WdVH2VKPLPOV5iL8yw%3D%2F0x0%3A2040x1360%2F1200x628%2Ffilters%3Afocal(1081x719%3A1082x720)%2Fcdn.vox-cdn.com%2Fuploads%2Fchorus_asset%2Ffile%2F25425111%2F247098_Teens_and_Character.AI_ASu.jpg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fcdn.vox-cdn.com%2Fthumbor%2F4Z51Hk5L0WdVH2VKPLPOV5iL8yw%3D%2F0x0%3A2040x1360%2F1200x628%2Ffilters%3Afocal(1081x719%3A1082x720)%2Fcdn.vox-cdn.com%2Fuploads%2Fchorus_asset%2Ffile%2F25425111%2F247098_Teens_and_Character.AI_ASu.jpg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fcdn.vox-cdn.com%2Fthumbor%2F4Z51Hk5L0WdVH2VKPLPOV5iL8yw%3D%2F0x0%3A2040x1360%2F1200x628%2Ffilters%3Afocal(1081x719%3A1082x720)%2Fcdn.vox-cdn.com%2Fuploads%2Fchorus_asset%2Ffile%2F25425111%2F247098_Teens_and_Character.AI_ASu.jpg 404w"/></picture></div><div class="meta"><div class="info-wrap"><p class="source clamp">The Verge</p><header title="The Teens Making Friends With AI Chatbots" class="title clamp">The Teens Making Friends With AI Chatbots</header><p class="excerpt clamp">“I’m not going to lie. I think I may be a little addicted to it.”</p></div></div><div class="impression-observer"></div></a><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;The Teens Making Friends With AI Chatbots&quot;}" class="context-menu-button icon"></button></div></div></div></div><div class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3"><a href="https://time.com/6972088/golden-retriever-boyfriend-masculinity-essay/?utm_source=pocket-newtab-en-intl" class="ds-card-link"><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/15f6abc0-39cc-47a9-ae3e-1d382c40785d.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F15f6abc0-39cc-47a9-ae3e-1d382c40785d.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F15f6abc0-39cc-47a9-ae3e-1d382c40785d.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F15f6abc0-39cc-47a9-ae3e-1d382c40785d.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F15f6abc0-39cc-47a9-ae3e-1d382c40785d.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F15f6abc0-39cc-47a9-ae3e-1d382c40785d.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F15f6abc0-39cc-47a9-ae3e-1d382c40785d.jpeg 404w"/></picture></div><div class="meta"><div class="info-wrap"><p class="source clamp">Time</p><header title="What Golden Retriever Boyfriends Tell Us About Masculinity" class="title clamp">What Golden Retriever Boyfriends Tell Us About Masculinity</header><p class="excerpt clamp">Golden Retriever boyfriends aren’t new. But the way we perceive masculinity is, writes Myisha Battle.</p></div></div><div class="impression-observer"></div></a><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;What Golden Retriever Boyfriends Tell Us About Masculinity&quot;}" class="context-menu-button icon"></button></div></div></div></div><div class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3"><a href="https://thewire.in/the-arts/beethovens-ninth-symphony-200-years-of-an-iconic-work-of-art?utm_source=pocket-newtab-en-intl" class="ds-card-link"><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/5297ed60-b2fa-4cf5-b400-b68bd9b8ad75.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F5297ed60-b2fa-4cf5-b400-b68bd9b8ad75.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F5297ed60-b2fa-4cf5-b400-b68bd9b8ad75.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F5297ed60-b2fa-4cf5-b400-b68bd9b8ad75.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F5297ed60-b2fa-4cf5-b400-b68bd9b8ad75.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F5297ed60-b2fa-4cf5-b400-b68bd9b8ad75.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F5297ed60-b2fa-4cf5-b400-b68bd9b8ad75.jpeg 404w"/></picture></div><div class="meta"><div class="info-wrap"><p class="source clamp">The Wire</p><header title="Beethoven’s Ninth Symphony: 200 Years of an Iconic Work of Art" class="title clamp">Beethoven’s Ninth Symphony: 200 Years of an Iconic Work of Art</header><p class="excerpt clamp">The enthusiastic response to the symphony’s debut performance presaged its reception in the European music community, globally and across time.</p></div></div><div class="impression-observer"></div></a><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Beethoven’s Ninth Symphony: 200 Years of an Iconic Work of Art&quot;}" class="context-menu-button icon"></button></div></div></div></div><div class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3"><a href="https://timesofindia.indiatimes.com/life-style/food-news/explained-why-armpit-sweat-infused-rice-balls-are-trending/articleshow/109865008.cms?utm_source=pocket-newtab-en-intl" class="ds-card-link"><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/c0688c0f-7557-41de-af3e-3bf6da07e1c2.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fc0688c0f-7557-41de-af3e-3bf6da07e1c2.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fc0688c0f-7557-41de-af3e-3bf6da07e1c2.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fc0688c0f-7557-41de-af3e-3bf6da07e1c2.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fc0688c0f-7557-41de-af3e-3bf6da07e1c2.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fc0688c0f-7557-41de-af3e-3bf6da07e1c2.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fc0688c0f-7557-41de-af3e-3bf6da07e1c2.jpeg 404w"/></picture></div><div class="meta"><div class="info-wrap"><p class="source clamp">The Times of India</p><header title="Explained: Why Armpit-Sweat-Infused Rice Balls Are Trending" class="title clamp">Explained: Why Armpit-Sweat-Infused Rice Balls Are Trending</header><p class="excerpt clamp">Japan’s bizarre armpit-sweat-infused rice balls trend, prepared using armpits instead of hands, sparks mixed reactions. Despite hygiene concerns, scholars support the trend citing armpit significance and pheromones. Social media debates continue.</p></div></div><div class="impression-observer"></div></a><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Explained: Why Armpit-Sweat-Infused Rice Balls Are Trending&quot;}" class="context-menu-button icon"></button></div></div></div></div><div class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3"><a href="https://www.thrillist.com/news/nation/airport-coffee-aeropress-espresso-travel-trend?utm_source=pocket-newtab-en-intl" class="ds-card-link"><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://assets3.thrillist.com/v1/image/3178310/1200x600/scale;;webp=auto;jpeg_quality=85.jpg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fassets3.thrillist.com%2Fv1%2Fimage%2F3178310%2F1200x600%2Fscale%3B%3Bwebp%3Dauto%3Bjpeg_quality%3D85.jpg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fassets3.thrillist.com%2Fv1%2Fimage%2F3178310%2F1200x600%2Fscale%3B%3Bwebp%3Dauto%3Bjpeg_quality%3D85.jpg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fassets3.thrillist.com%2Fv1%2Fimage%2F3178310%2F1200x600%2Fscale%3B%3Bwebp%3Dauto%3Bjpeg_quality%3D85.jpg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fassets3.thrillist.com%2Fv1%2Fimage%2F3178310%2F1200x600%2Fscale%3B%3Bwebp%3Dauto%3Bjpeg_quality%3D85.jpg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fassets3.thrillist.com%2Fv1%2Fimage%2F3178310%2F1200x600%2Fscale%3B%3Bwebp%3Dauto%3Bjpeg_quality%3D85.jpg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fassets3.thrillist.com%2Fv1%2Fimage%2F3178310%2F1200x600%2Fscale%3B%3Bwebp%3Dauto%3Bjpeg_quality%3D85.jpg 404w"/></picture></div><div class="meta"><div class="info-wrap"><p class="source clamp">Thrillist</p><header title="The Lengths People Are Going to Avoid Drinking Airport Coffee" class="title clamp">The Lengths People Are Going to Avoid Drinking Airport Coffee</header><p class="excerpt clamp">Pro tip: You can skip the line if you make your own. </p></div></div><div class="impression-observer"></div></a><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;The Lengths People Are Going to Avoid Drinking Airport Coffee&quot;}" class="context-menu-button icon"></button></div></div></div></div><div class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3"><a href="https://link.newyorker.com/click/35266947.3736623/aHR0cHM6Ly93d3cubmV3eW9ya2VyLmNvbS9jdWx0dXJlL3RoZS13ZWVrZW5kLWVzc2F5L3RoZS1oaWRkZW4tcHJlZ25hbmN5LWV4cGVyaW1lbnQ_dXRtX3NvdXJjZT1ubCZ1dG1fYnJhbmQ9dG55JnV0bV9tYWlsaW5nPVROWV9EYWlseV8wNTA0MjQmdXRtX2NhbXBhaWduPWF1ZC1kZXYmdXRtX21lZGl1bT1lbWFpbCZ1dG1fdGVybT10bnlfZGFpbHlfZGlnZXN0JmJ4aWQ9NjQxZTA4MDhlNDM4N2EwOGQ1MDY3ODVjJmNuZGlkPTczMzMyMjk4Jmhhc2hhPTY1ZjcyZjllZmFkYmI2OGIxMWE4MmYwYzAwMzM0NDRmJmhhc2hiPTU5ZGY5Y2FjM2FkYTNkZmUxNjQ5NjczNzkyODZjMTViY2ZmNThiOGMmaG?utm_source=pocket-newtab-en-intl" class="ds-card-link"><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://media.newyorker.com/photos/66326e7614f7f2e3ee31eac9/16:9/w_1280,c_limit/Tolentino_pregnancy_surveillance_wide.jpg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.newyorker.com%2Fphotos%2F66326e7614f7f2e3ee31eac9%2F16%3A9%2Fw_1280%2Cc_limit%2FTolentino_pregnancy_surveillance_wide.jpg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.newyorker.com%2Fphotos%2F66326e7614f7f2e3ee31eac9%2F16%3A9%2Fw_1280%2Cc_limit%2FTolentino_pregnancy_surveillance_wide.jpg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.newyorker.com%2Fphotos%2F66326e7614f7f2e3ee31eac9%2F16%3A9%2Fw_1280%2Cc_limit%2FTolentino_pregnancy_surveillance_wide.jpg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.newyorker.com%2Fphotos%2F66326e7614f7f2e3ee31eac9%2F16%3A9%2Fw_1280%2Cc_limit%2FTolentino_pregnancy_surveillance_wide.jpg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.newyorker.com%2Fphotos%2F66326e7614f7f2e3ee31eac9%2F16%3A9%2Fw_1280%2Cc_limit%2FTolentino_pregnancy_surveillance_wide.jpg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.newyorker.com%2Fphotos%2F66326e7614f7f2e3ee31eac9%2F16%3A9%2Fw_1280%2Cc_limit%2FTolentino_pregnancy_surveillance_wide.jpg 404w"/></picture></div><div class="meta"><div class="info-wrap"><p class="source clamp">The New Yorker</p><header title="The Hidden-Pregnancy Experiment" class="title clamp">The Hidden-Pregnancy Experiment</header><p class="excerpt clamp">We are increasingly trading our privacy for a sense of security. Becoming a parent showed me how tempting, and how dangerous, that exchange can be.</p></div></div><div class="impression-observer"></div></a><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;The Hidden-Pregnancy Experiment&quot;}" class="context-menu-button icon"></button></div></div></div></div><div class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3"><a href="https://indianexpress.com/article/explained/explained-health/cancer-cases-india-9311917/?utm_source=pocket-newtab-en-intl" class="ds-card-link"><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/13af9f97-afb3-4932-addb-533d3329c91b.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F13af9f97-afb3-4932-addb-533d3329c91b.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F13af9f97-afb3-4932-addb-533d3329c91b.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F13af9f97-afb3-4932-addb-533d3329c91b.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F13af9f97-afb3-4932-addb-533d3329c91b.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F13af9f97-afb3-4932-addb-533d3329c91b.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F13af9f97-afb3-4932-addb-533d3329c91b.jpeg 404w"/></picture></div><div class="meta"><div class="info-wrap"><p class="source clamp">The Indian Express</p><header title="Why Are Cancer Cases Soaring in India?" class="title clamp">Why Are Cancer Cases Soaring in India?</header><p class="excerpt clamp">Praful Reddy, 49, an IT professional from southern Andhra Pradesh state, suffers from lung cancer and has been undergoing targeted therapy, chemotherapy, and radiation to stop its spread since he was diagnosed two years ago.</p></div></div><div class="impression-observer"></div></a><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Why Are Cancer Cases Soaring in India?&quot;}" class="context-menu-button icon"></button></div></div></div></div><div class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3"><a href="https://www.inc.com/kevin-feig/beach-reads-for-personal-finance.html?utm_source=pocket-newtab-en-intl" class="ds-card-link"><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/984af2c2-28ea-432d-8d11-b86846778f6e.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F984af2c2-28ea-432d-8d11-b86846778f6e.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F984af2c2-28ea-432d-8d11-b86846778f6e.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F984af2c2-28ea-432d-8d11-b86846778f6e.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F984af2c2-28ea-432d-8d11-b86846778f6e.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F984af2c2-28ea-432d-8d11-b86846778f6e.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F984af2c2-28ea-432d-8d11-b86846778f6e.jpeg 404w"/></picture></div><div class="meta"><div class="info-wrap"><p class="source clamp">Inc. Magazine</p><header title="Beach Reads for Personal Finance" class="title clamp">Beach Reads for Personal Finance</header><p class="excerpt clamp">I&#x27;ve read many books about personal finance and even written one. Some are terrific, most are terribly boring and technical, and a handful should be avoided at all costs. To help you upskill your financial literacy while lying on the beach this summer, below are my top recommendations:</p></div></div><div class="impression-observer"></div></a><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Beach Reads for Personal Finance&quot;}" class="context-menu-button icon"></button></div></div></div></div><div class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3"><a href="https://www.wired.com/story/translation-tech-is-amazing-except-when-its-not/?utm_source=pocket-newtab-en-intl" class="ds-card-link"><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://media.wired.com/photos/66356649588f131dd8d770a5/191:100/w_1280,c_limit/Translation-Tech-Gear-GettyImages-1417723053.jpg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.wired.com%2Fphotos%2F66356649588f131dd8d770a5%2F191%3A100%2Fw_1280%2Cc_limit%2FTranslation-Tech-Gear-GettyImages-1417723053.jpg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.wired.com%2Fphotos%2F66356649588f131dd8d770a5%2F191%3A100%2Fw_1280%2Cc_limit%2FTranslation-Tech-Gear-GettyImages-1417723053.jpg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.wired.com%2Fphotos%2F66356649588f131dd8d770a5%2F191%3A100%2Fw_1280%2Cc_limit%2FTranslation-Tech-Gear-GettyImages-1417723053.jpg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.wired.com%2Fphotos%2F66356649588f131dd8d770a5%2F191%3A100%2Fw_1280%2Cc_limit%2FTranslation-Tech-Gear-GettyImages-1417723053.jpg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.wired.com%2Fphotos%2F66356649588f131dd8d770a5%2F191%3A100%2Fw_1280%2Cc_limit%2FTranslation-Tech-Gear-GettyImages-1417723053.jpg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.wired.com%2Fphotos%2F66356649588f131dd8d770a5%2F191%3A100%2Fw_1280%2Cc_limit%2FTranslation-Tech-Gear-GettyImages-1417723053.jpg 404w"/></picture></div><div class="meta"><div class="info-wrap"><p class="source clamp">WIRED</p><header title="Translation Tech Is Amazing, Except When It’s Not" class="title clamp">Translation Tech Is Amazing, Except When It’s Not</header><p class="excerpt clamp">We can hold surprisingly deep conversations across languages using simple apps on our phones. But even as these apps get a fresh boost from AI, they can still lead to some awkward moments.</p></div></div><div class="impression-observer"></div></a><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Translation Tech Is Amazing, Except When It’s Not&quot;}" class="context-menu-button icon"></button></div></div></div></div></div></div></div><div><div class="ds-navigation ds-navigation-left-align "><span class="ds-navigation-header" data-l10n-id="newtab-pocket-read-more"></span><ul><li><a href="https://getpocket.com/explore/self-improvement?utm_source=pocket-newtab">Self improvement</a></li><li><a href="https://getpocket.com/explore/food?utm_source=pocket-newtab">Food</a></li><li><a href="https://getpocket.com/explore/entertainment?utm_source=pocket-newtab">Entertainment</a></li><li><a href="https://getpocket.com/explore/health?utm_source=pocket-newtab">Health &amp; fitness</a></li><li><a href="https://getpocket.com/explore/science?utm_source=pocket-newtab">Science</a></li><li><a href="https://getpocket.com/explore?utm_source=pocket-newtab">More recommendations ›</a></li></ul><a href="https://www.mozilla.org/privacy/firefox/#suggest-relevant-content" class="ds-navigation-privacy"><span data-l10n-id="newtab-section-menu-privacy-notice"></span></a></div></div></div></div><style data-styles="[[null,{&quot;.ds-navigation&quot;:&quot;margin-top: -10px;&quot;}]]"></style></div></div></section><div class="discovery-stream ds-layout"><div class="ds-column ds-column-12"><div class="ds-column-grid"><div></div></div></div><style data-styles="[[null]]"></style></div></div></main></div></div>
+    </div>
+    <div id="footer-asrouter-container" role="presentation"></div>
+    <script src="about:home?jscache"></script>
+  </body>
+</html>
+window.__FROM_STARTUP_CACHE__ = true;
+window.__STARTUP_STATE__ = {
+	"TopSites": {
+		"initialized": true,
+		"rows": [
+			{
+				"isDefault": true,
+				"url": "https://s.click.aliexpress.com/e/byrlillA?af=amp1250&dp=1715077441400700000&mfadid=adm",
+				"hostname": "s.click.aliexpress",
+				"sendAttributionRequest": false,
+				"label": "AliExpress",
+				"show_sponsored_label": true,
+				"sponsored_position": 1,
+				"sponsored_click_url": "https://bridge.sfo1.ap01.net/ctp?version=16.0.0&ci=1715077441110.12791&key=1715077441400700000.1&ctag=1715077441400700000",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkX4Zldfpxr4p2X4pbW4ZbWfpbW7ReNxR3UIG8zInwYIFIVs9eYiGINHrwkiFXwxYIZjF8XgClWfC2X7R4dHQ8zJnErj%3DcO7R4dHQfz4Z2Z4pfnHG3Z5FwqgCfX1p8d4Cxr1BINI9HuiF2z4Z2Z4pfnHmcux%3DcvImauiF2zfQl%2B4QqX7ncqIr7VjGbuiF2zfCDkfCHXfQDnj9wWIBdvIpkY7R4TJr2uJREuHnEYgClnHr7wHG3vjnDuiF2zfCbYfYIWJ%3DcQIFdwJR2uiF2zfCbW4Wyy",
+				"sponsored_tile_id": 74343,
+				"partner": "amp",
+				"favicon": "https://tiles-cdn.prod.ads.prod.webservices.mozgcp.net/ydUu3ZjEx4-B5Lufmypmi0NqdfuZh3doEVs2ffjQNVk=.10324.jpg",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.amazon.in/?k=%QUERY_KEYWORD%&tag=admpdesktopin-21&ref=pd_sl_b95bba4192dfb2b08695312370d9ca5242e3d3c107a79099b85a13c3",
+				"hostname": "amazon",
+				"sendAttributionRequest": false,
+				"label": "Amazon",
+				"show_sponsored_label": true,
+				"sponsored_position": 2,
+				"sponsored_click_url": "https://bridge.sfo1.ap01.net/ctp?version=16.0.0&ci=1715077441110.12791&key=1715077441400700000.2&ctag=pd_sl_b95bba4192dfb2b08695312370d9ca5242e3d3c107a79099b85a13c3",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkX4Zldfpxr4p2X4pbW4ZbWfpbW7ReNxR3UIG8zInwYIFIVs9eYiGINHrwkiFXwxYIZjF8XgClWfC2X7R4dHQ8zJnErj%3DcO7R4dHQfz4Z2Z4CxnHG3Z5FwqgCfX1p8d4Cxr1BINI9HuiF2z4Z2Z4CxnHmcux%3DcvImauiF2zfQlXfplZ7ncqIr7VjGbuiF2zfCfdfC2X4QDnj9wWIBdvIpkY7R4TJr2uJREuHnEYgC8nHr7wHG3vjnDuiF2z4Z2Z7ReTHF4wJFEUjtdvIpkXfpbr",
+				"sponsored_tile_id": 74357,
+				"partner": "amp",
+				"favicon": "https://tiles-cdn.prod.ads.prod.webservices.mozgcp.net/CAP5k4gWqcBGwir7bEEmBWveLMtvldFu-y_kyO3txFA=.9991.jpg",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.youtube.com/",
+				"hostname": "youtube",
+				"sendAttributionRequest": false,
+				"label": "YouTube",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/youtube-com@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/youtube-com.png",
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.facebook.com/",
+				"hostname": "facebook",
+				"sendAttributionRequest": false,
+				"label": "Facebook",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/facebook-com@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/facebook-com.ico",
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.wikipedia.org/",
+				"hostname": "wikipedia",
+				"sendAttributionRequest": false,
+				"label": "Wikipedia",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/wikipedia-org@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/wikipedia-org.ico",
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.reddit.com/",
+				"hostname": "reddit",
+				"sendAttributionRequest": false,
+				"label": "Reddit",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/reddit-com@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/reddit-com.png",
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://twitter.com/",
+				"hostname": "twitter",
+				"sendAttributionRequest": false,
+				"label": "Twitter",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/twitter-com@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/twitter-com.ico",
+				"typedBonus": true
+			}
+		],
+		"editForm": null,
+		"showSearchShortcutsForm": false,
+		"searchShortcuts": [
+			{
+				"keyword": "@google",
+				"shortURL": "google",
+				"url": "https://google.com",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/google-com@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/google-com.ico"
+			},
+			{
+				"keyword": "@bing",
+				"shortURL": "bing",
+				"url": "https://bing.com",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/bing-com@2x.svg",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/bing-com.ico"
+			},
+			{
+				"keyword": "@duckduckgo",
+				"shortURL": "duckduckgo",
+				"url": "https://duckduckgo.com",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/duckduckgo-com@2x.svg",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/duckduckgo-com.ico"
+			},
+			{
+				"keyword": "@wikipedia",
+				"shortURL": "wikipedia",
+				"url": "https://wikipedia.org",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/wikipedia-org@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/wikipedia-org.ico"
+			}
+		],
+		"pref": {
+			"collapsed": false
+		}
+	},
+	"App": {
+		"initialized": true,
+		"locale": "en-US",
+		"isForStartupCache": true,
+		"customizeMenuVisible": false,
+		"links": [
+			{
+				"isDefault": true,
+				"url": "https://s.click.aliexpress.com/e/byrlillA?af=amp1250&dp=1715077441400700000&mfadid=adm",
+				"hostname": "s.click.aliexpress",
+				"sendAttributionRequest": false,
+				"label": "AliExpress",
+				"show_sponsored_label": true,
+				"sponsored_position": 1,
+				"sponsored_click_url": "https://bridge.sfo1.ap01.net/ctp?version=16.0.0&ci=1715077441110.12791&key=1715077441400700000.1&ctag=1715077441400700000",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkX4Zldfpxr4p2X4pbW4ZbWfpbW7ReNxR3UIG8zInwYIFIVs9eYiGINHrwkiFXwxYIZjF8XgClWfC2X7R4dHQ8zJnErj%3DcO7R4dHQfz4Z2Z4pfnHG3Z5FwqgCfX1p8d4Cxr1BINI9HuiF2z4Z2Z4pfnHmcux%3DcvImauiF2zfQl%2B4QqX7ncqIr7VjGbuiF2zfCDkfCHXfQDnj9wWIBdvIpkY7R4TJr2uJREuHnEYgClnHr7wHG3vjnDuiF2zfCbYfYIWJ%3DcQIFdwJR2uiF2zfCbW4Wyy",
+				"sponsored_tile_id": 74343,
+				"partner": "amp",
+				"favicon": "https://tiles-cdn.prod.ads.prod.webservices.mozgcp.net/ydUu3ZjEx4-B5Lufmypmi0NqdfuZh3doEVs2ffjQNVk=.10324.jpg",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.amazon.in/?k=%QUERY_KEYWORD%&tag=admpdesktopin-21&ref=pd_sl_b95bba4192dfb2b08695312370d9ca5242e3d3c107a79099b85a13c3",
+				"hostname": "amazon",
+				"sendAttributionRequest": false,
+				"label": "Amazon",
+				"show_sponsored_label": true,
+				"sponsored_position": 2,
+				"sponsored_click_url": "https://bridge.sfo1.ap01.net/ctp?version=16.0.0&ci=1715077441110.12791&key=1715077441400700000.2&ctag=pd_sl_b95bba4192dfb2b08695312370d9ca5242e3d3c107a79099b85a13c3",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkX4Zldfpxr4p2X4pbW4ZbWfpbW7ReNxR3UIG8zInwYIFIVs9eYiGINHrwkiFXwxYIZjF8XgClWfC2X7R4dHQ8zJnErj%3DcO7R4dHQfz4Z2Z4CxnHG3Z5FwqgCfX1p8d4Cxr1BINI9HuiF2z4Z2Z4CxnHmcux%3DcvImauiF2zfQlXfplZ7ncqIr7VjGbuiF2zfCfdfC2X4QDnj9wWIBdvIpkY7R4TJr2uJREuHnEYgC8nHr7wHG3vjnDuiF2z4Z2Z7ReTHF4wJFEUjtdvIpkXfpbr",
+				"sponsored_tile_id": 74357,
+				"partner": "amp",
+				"favicon": "https://tiles-cdn.prod.ads.prod.webservices.mozgcp.net/CAP5k4gWqcBGwir7bEEmBWveLMtvldFu-y_kyO3txFA=.9991.jpg",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.youtube.com/",
+				"hostname": "youtube",
+				"sendAttributionRequest": false,
+				"label": "YouTube",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/youtube-com@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/youtube-com.png",
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.facebook.com/",
+				"hostname": "facebook",
+				"sendAttributionRequest": false,
+				"label": "Facebook",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/facebook-com@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/facebook-com.ico",
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.wikipedia.org/",
+				"hostname": "wikipedia",
+				"sendAttributionRequest": false,
+				"label": "Wikipedia",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/wikipedia-org@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/wikipedia-org.ico",
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.reddit.com/",
+				"hostname": "reddit",
+				"sendAttributionRequest": false,
+				"label": "Reddit",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/reddit-com@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/reddit-com.png",
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://twitter.com/",
+				"hostname": "twitter",
+				"sendAttributionRequest": false,
+				"label": "Twitter",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/twitter-com@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/twitter-com.ico",
+				"typedBonus": true
+			}
+		],
+		"pref": {
+			"collapsed": false
+		}
+	},
+	"ASRouter": {
+		"initialized": false
+	},
+	"Snippets": {
+		"initialized": false
+	},
+	"Prefs": {
+		"initialized": true,
+		"values": {
+			"default.sites": "https://www.youtube.com/,https://www.facebook.com/,https://www.wikipedia.org/,https://www.reddit.com/,https://www.amazon.com/,https://twitter.com/",
+			"feeds.section.topstories.options": "{\"api_key_pref\":\"extensions.pocket.oAuthConsumerKey\",\"hidden\":false,\"provider_icon\":\"chrome://global/skin/icons/pocket.svg\",\"provider_name\":\"Pocket\",\"read_more_endpoint\":\"https://getpocket.com/explore/trending?src=fx_new_tab\",\"stories_endpoint\":\"https://getpocket.cdn.mozilla.net/v3/firefox/global-recs?version=3&consumer_key=$apiKey&locale_lang=en-US&feed_variant=default_spocs_off\",\"stories_referrer\":\"https://getpocket.com/recommendations\",\"topics_endpoint\":\"https://getpocket.cdn.mozilla.net/v3/firefox/trending-topics?version=2&consumer_key=$apiKey&locale_lang=en-US\",\"show_spocs\":false}",
+			"feeds.topsites": true,
+			"hideTopSitesTitle": false,
+			"showSponsored": true,
+			"showSponsoredTopSites": true,
+			"pocketCta": "{\"cta_button\":\"\",\"cta_text\":\"\",\"cta_url\":\"\",\"use_cta\":false}",
+			"showSearch": true,
+			"feeds.snippets": false,
+			"topSitesRows": 1,
+			"telemetry": true,
+			"telemetry.ut.events": false,
+			"telemetry.structuredIngestion.endpoint": "https://incoming.telemetry.mozilla.org/submit",
+			"section.highlights.includeVisited": true,
+			"section.highlights.includeBookmarks": true,
+			"section.highlights.includePocket": true,
+			"section.highlights.includeDownloads": true,
+			"section.highlights.rows": 1,
+			"section.topstories.rows": 1,
+			"sectionOrder": "topsites,topstories,highlights",
+			"improvesearch.noDefaultSearchTile": true,
+			"improvesearch.topSiteSearchShortcuts.searchEngines": "google",
+			"improvesearch.topSiteSearchShortcuts.havePinned": "",
+			"asrouter.devtoolsEnabled": false,
+			"asrouter.providers.onboarding": "{\"id\":\"onboarding\",\"type\":\"local\",\"localProvider\":\"OnboardingMessageProvider\",\"enabled\":true,\"exclude\":[]}",
+			"discoverystream.flight.blocks": "{}",
+			"discoverystream.config": "{\"api_key_pref\":\"extensions.pocket.oAuthConsumerKey\",\"collapsible\":true,\"enabled\":true,\"show_spocs\":false,\"hardcoded_layout\":true,\"layout_endpoint\":\"https://getpocket.cdn.mozilla.net/v3/newtab/layout?version=1&consumer_key=$apiKey&layout_variant=basic\"}",
+			"discoverystream.endpoints": "https://getpocket.cdn.mozilla.net/,https://firefox-api-proxy.cdn.mozilla.net/,https://spocs.getpocket.com/",
+			"discoverystream.isCollectionDismissible": true,
+			"discoverystream.onboardingExperience.dismissed": false,
+			"discoverystream.region-basic-layout": false,
+			"discoverystream.spoc.impressions": "{}",
+			"discoverystream.endpointSpocsClear": "https://spocs.getpocket.com/user",
+			"discoverystream.rec.impressions": "{}",
+			"showRecentSaves": true,
+			"feeds.aboutpreferences": true,
+			"feeds.newtabinit": true,
+			"feeds.places": true,
+			"feeds.prefs": true,
+			"feeds.sections": true,
+			"feeds.section.highlights": false,
+			"feeds.system.topstories": true,
+			"feeds.systemtick": true,
+			"feeds.telemetry": true,
+			"feeds.favicon": true,
+			"feeds.system.topsites": true,
+			"feeds.recommendationprovider": true,
+			"feeds.discoverystreamfeed": true,
+			"isPrivateBrowsingEnabled": true,
+			"platform": "linux",
+			"fxa_endpoint": "https://accounts.firefox.com/",
+			"appUpdateChannel": "default",
+			"improvesearch.topSiteSearchShortcuts": true,
+			"mayHaveSponsoredTopSites": true,
+			"improvesearch.handoffToAwesomebar": true,
+			"urlbar.placeholderName": "Google",
+			"featureConfig": {
+				"customizationMenuEnabled": null,
+				"topSitesContileEnabled": true
+			},
+			"pocketConfig": {
+				"spocPositions": "1,5,7,11,18,20",
+				"spocTopsitesPositions": "1",
+				"spocAdTypes": "",
+				"spocZoneIds": "",
+				"spocTopsitesAdTypes": "",
+				"spocTopsitesZoneIds": "",
+				"spocSiteId": "",
+				"widgetPositions": "",
+				"hybridLayout": false,
+				"hideCardBackground": false,
+				"fourCardLayout": false,
+				"newFooterSection": false,
+				"saveToPocketCard": true,
+				"saveToPocketCardRegions": "",
+				"hideDescriptions": false,
+				"hideDescriptionsRegions": "",
+				"compactGrid": false,
+				"compactImages": false,
+				"imageGradient": false,
+				"titleLines": 3,
+				"descLines": 3,
+				"onboardingExperience": false,
+				"essentialReadsHeader": false,
+				"editorsPicksHeader": false,
+				"recentSavesEnabled": false,
+				"readTime": true,
+				"newSponsoredLabel": false,
+				"sendToPocket": true,
+				"recsPersonalized": false,
+				"spocsPersonalized": true,
+				"spocsCacheTimeout": null,
+				"regionStoriesConfig": "US,DE,CA,GB,IE,CH,AT,BE,IN,FR,IT,ES",
+				"regionBffConfig": "FR,IT,ES",
+				"regionStoriesBlock": "",
+				"localeListConfig": "",
+				"regionSpocsConfig": "US,CA,DE,GB,FR,IT,ES",
+				"topSitesContileSovEnabled": false
+			},
+			"logowordmark.alwaysVisible": true,
+			"feeds.section.topstories": true,
+			"discoverystream.enabled": true,
+			"discoverystream.sponsored-collections.enabled": false,
+			"discoverystream.hardcoded-basic-layout": false,
+			"discoverystream.personalization.enabled": true,
+			"discoverystream.personalization.override": false,
+			"discoverystream.personalization.modelKeys": "nb_model_arts_and_entertainment, nb_model_autos_and_vehicles, nb_model_beauty_and_fitness, nb_model_blogging_resources_and_services, nb_model_books_and_literature, nb_model_business_and_industrial, nb_model_computers_and_electronics, nb_model_finance, nb_model_food_and_drink, nb_model_games, nb_model_health, nb_model_hobbies_and_leisure, nb_model_home_and_garden, nb_model_internet_and_telecom, nb_model_jobs_and_education, nb_model_law_and_government, nb_model_online_communities, nb_model_people_and_society, nb_model_pets_and_animals, nb_model_real_estate, nb_model_reference, nb_model_science, nb_model_shopping, nb_model_sports, nb_model_travel",
+			"discoverystream.spocs-endpoint": "",
+			"discoverystream.spocs-endpoint-query": "",
+			"newNewtabExperience.colors": "#0090ED,#FF4F5F,#2AC3A2,#FF7139,#A172FF,#FFA437,#FF2A8A",
+			"region": "IN"
+		}
+	},
+	"Dialog": {
+		"visible": false,
+		"data": {}
+	},
+	"Sections": [
+		{
+			"title": {
+				"id": "newtab-section-header-pocket",
+				"values": {
+					"provider": "Pocket"
+				}
+			},
+			"rows": [],
+			"enabled": true,
+			"id": "topstories",
+			"pref": {
+				"titleString": {
+					"id": "home-prefs-recommended-by-header",
+					"values": {
+						"provider": "Pocket"
+					}
+				},
+				"descString": {
+					"id": "home-prefs-recommended-by-description-new",
+					"values": {
+						"provider": "Pocket"
+					}
+				},
+				"nestedPrefs": [],
+				"learnMore": {
+					"link": {
+						"href": "https://getpocket.com/firefox/new_tab_learn_more",
+						"id": "home-prefs-recommended-by-learn-more"
+					}
+				},
+				"collapsed": false,
+				"feed": "feeds.section.topstories"
+			},
+			"shouldHidePref": false,
+			"eventSource": "TOP_STORIES",
+			"icon": "chrome://global/skin/icons/pocket.svg",
+			"learnMore": {
+				"link": {
+					"href": "https://getpocket.com/firefox/new_tab_learn_more",
+					"message": {
+						"id": "newtab-pocket-learn-more"
+					}
+				}
+			},
+			"compactCards": false,
+			"rowsPref": "section.topstories.rows",
+			"maxRows": 4,
+			"availableLinkMenuOptions": [
+				"CheckBookmarkOrArchive",
+				"CheckSavedToPocket",
+				"Separator",
+				"OpenInNewWindow",
+				"OpenInPrivateWindow",
+				"Separator",
+				"BlockUrl"
+			],
+			"emptyState": {
+				"message": {
+					"id": "newtab-empty-section-topstories",
+					"values": {
+						"provider": "Pocket"
+					}
+				},
+				"icon": "check"
+			},
+			"shouldSendImpressionStats": true,
+			"dedupeFrom": [
+				"highlights"
+			],
+			"options": {
+				"api_key_pref": "extensions.pocket.oAuthConsumerKey",
+				"hidden": false,
+				"provider_icon": "chrome://global/skin/icons/pocket.svg",
+				"provider_name": "Pocket",
+				"read_more_endpoint": "https://getpocket.com/explore/trending?src=fx_new_tab",
+				"stories_endpoint": "https://getpocket.cdn.mozilla.net/v3/firefox/global-recs?version=3&consumer_key=$apiKey&locale_lang=en-US&feed_variant=default_spocs_off",
+				"stories_referrer": "https://getpocket.com/recommendations",
+				"topics_endpoint": "https://getpocket.cdn.mozilla.net/v3/firefox/trending-topics?version=2&consumer_key=$apiKey&locale_lang=en-US",
+				"show_spocs": false
+			},
+			"contextMenuOptions": [
+				"CheckBookmarkOrArchive",
+				"CheckSavedToPocket",
+				"Separator",
+				"OpenInNewWindow",
+				"OpenInPrivateWindow",
+				"Separator",
+				"BlockUrl"
+			],
+			"initialized": false,
+			"dedupeConfigurations": [
+				{
+					"id": "topstories",
+					"dedupeFrom": [
+						"highlights"
+					]
+				}
+			]
+		},
+		{
+			"title": {
+				"id": "newtab-section-header-recent-activity"
+			},
+			"rows": [],
+			"enabled": false,
+			"id": "highlights",
+			"pref": {
+				"titleString": {
+					"id": "home-prefs-recent-activity-header"
+				},
+				"descString": {
+					"id": "home-prefs-recent-activity-description"
+				},
+				"nestedPrefs": [
+					{
+						"name": "section.highlights.includeVisited",
+						"titleString": "home-prefs-highlights-option-visited-pages"
+					},
+					{
+						"name": "section.highlights.includeBookmarks",
+						"titleString": "home-prefs-highlights-options-bookmarks"
+					},
+					{
+						"name": "section.highlights.includeDownloads",
+						"titleString": "home-prefs-highlights-option-most-recent-download"
+					},
+					{
+						"name": "section.highlights.includePocket",
+						"titleString": "home-prefs-highlights-option-saved-to-pocket",
+						"hidden": false
+					}
+				],
+				"collapsed": false,
+				"feed": "feeds.section.highlights"
+			},
+			"shouldHidePref": false,
+			"eventSource": "HIGHLIGHTS",
+			"icon": "chrome://global/skin/icons/highlights.svg",
+			"compactCards": true,
+			"rowsPref": "section.highlights.rows",
+			"maxRows": 4,
+			"emptyState": {
+				"message": {
+					"id": "newtab-empty-section-highlights"
+				},
+				"icon": "chrome://global/skin/icons/highlights.svg"
+			},
+			"shouldSendImpressionStats": false,
+			"options": {},
+			"initialized": false
+		}
+	],
+	"Pocket": {
+		"isUserLoggedIn": null,
+		"pocketCta": {},
+		"waitingForSpoc": true
+	},
+	"Personalization": {
+		"lastUpdated": null,
+		"initialized": false
+	},
+	"DiscoveryStream": {
+		"config": {
+			"api_key_pref": "extensions.pocket.oAuthConsumerKey",
+			"collapsible": true,
+			"enabled": true,
+			"show_spocs": false,
+			"hardcoded_layout": true,
+			"layout_endpoint": "https://getpocket.cdn.mozilla.net/v3/newtab/layout?version=1&consumer_key=40249-e88c401e1b1f2242d9e441c4&layout_variant=basic"
+		},
+		"layout": [
+			{
+				"width": 12,
+				"components": [
+					{
+						"type": "TopSites",
+						"header": {
+							"title": {
+								"id": "newtab-section-header-topsites"
+							}
+						},
+						"properties": {}
+					},
+					{
+						"type": "Message",
+						"essentialReadsHeader": false,
+						"editorsPicksHeader": false,
+						"header": {
+							"title": {
+								"id": "newtab-section-header-pocket",
+								"values": {
+									"provider": "Pocket"
+								}
+							},
+							"subtitle": "",
+							"link_text": {
+								"id": "newtab-pocket-learn-more"
+							},
+							"link_url": "https://getpocket.com/firefox/new_tab_learn_more",
+							"icon": "chrome://global/skin/icons/pocket.svg"
+						},
+						"properties": {},
+						"styles": {
+							".ds-message": "margin-bottom: -20px"
+						}
+					},
+					{
+						"type": "CardGrid",
+						"properties": {
+							"items": 21,
+							"hybridLayout": false,
+							"hideCardBackground": false,
+							"fourCardLayout": false,
+							"compactGrid": false,
+							"essentialReadsHeader": false,
+							"editorsPicksHeader": false,
+							"onboardingExperience": false
+						},
+						"widgets": {
+							"positions": [],
+							"data": [
+								{
+									"type": "TopicsWidget"
+								}
+							]
+						},
+						"cta_variant": "link",
+						"header": {
+							"title": ""
+						},
+						"placement": {
+							"name": "spocs",
+							"ad_types": [
+								3617
+							],
+							"zone_ids": [
+								217758,
+								217995
+							]
+						},
+						"feed": {
+							"embed_reference": null,
+							"url": "https://getpocket.cdn.mozilla.net/v3/firefox/global-recs?version=3&consumer_key=$apiKey&locale_lang=$locale&region=$region&count=30"
+						},
+						"spocs": {
+							"probability": 1,
+							"positions": [
+								{
+									"index": 1
+								},
+								{
+									"index": 5
+								},
+								{
+									"index": 7
+								},
+								{
+									"index": 11
+								},
+								{
+									"index": 18
+								},
+								{
+									"index": 20
+								}
+							]
+						}
+					},
+					{
+						"type": "Navigation",
+						"newFooterSection": false,
+						"properties": {
+							"alignment": "left-align",
+							"links": [
+								{
+									"name": "Self improvement",
+									"url": "https://getpocket.com/explore/self-improvement?utm_source=pocket-newtab"
+								},
+								{
+									"name": "Food",
+									"url": "https://getpocket.com/explore/food?utm_source=pocket-newtab"
+								},
+								{
+									"name": "Entertainment",
+									"url": "https://getpocket.com/explore/entertainment?utm_source=pocket-newtab"
+								},
+								{
+									"name": "Health & fitness",
+									"url": "https://getpocket.com/explore/health?utm_source=pocket-newtab"
+								},
+								{
+									"name": "Science",
+									"url": "https://getpocket.com/explore/science?utm_source=pocket-newtab"
+								},
+								{
+									"name": "More recommendations ›",
+									"url": "https://getpocket.com/explore?utm_source=pocket-newtab"
+								}
+							],
+							"extraLinks": [
+								{
+									"name": "Career",
+									"url": "https://getpocket.com/explore/career?utm_source=pocket-newtab"
+								},
+								{
+									"name": "Technology",
+									"url": "https://getpocket.com/explore/technology?utm_source=pocket-newtab"
+								}
+							],
+							"privacyNoticeURL": {
+								"url": "https://www.mozilla.org/privacy/firefox/#suggest-relevant-content",
+								"title": {
+									"id": "newtab-section-menu-privacy-notice"
+								}
+							}
+						},
+						"header": {
+							"title": {
+								"id": "newtab-pocket-read-more"
+							}
+						},
+						"styles": {
+							".ds-navigation": "margin-top: -10px;"
+						}
+					}
+				]
+			}
+		],
+		"lastUpdated": null,
+		"isPrivacyInfoModalVisible": false,
+		"isCollectionDismissible": true,
+		"feeds": {
+			"data": {
+				"https://getpocket.cdn.mozilla.net/v3/firefox/global-recs?version=3&consumer_key=$apiKey&locale_lang=$locale&region=$region&count=30": {
+					"lastUpdated": 1715099035067,
+					"data": {
+						"settings": {
+							"domainAffinityParameterSets": {},
+							"timeSegments": [
+								{
+									"id": "week",
+									"startTime": 604800,
+									"endTime": 0,
+									"weightPosition": 1
+								},
+								{
+									"id": "month",
+									"startTime": 2592000,
+									"endTime": 604800,
+									"weightPosition": 0.5
+								}
+							],
+							"recsExpireTime": 5400,
+							"spocsPerNewTabs": 0.5,
+							"version": "6f605b0212069b4b8d3d040faf55742061a25c16"
+						},
+						"recommendations": [
+							{
+								"id": 3595763854708474,
+								"url": "https://www.vogue.in/content/signs-that-are-typically-seen-in-a-toxic-relationship?utm_source=pocket-newtab-en-intl",
+								"title": "5 Emotional Dependency Signs That Will Help You Determine If You Need to Work on Yourself",
+								"excerpt": "Falling in love is one of the most beautiful feelings there is. You’re nervous, the butterflies in your stomach are going crazy and you don’t want to be without him/her for a second. It’s like a high of emotions that is addictive and you need more of it.",
+								"domain": "Vogue",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/4decb1fa-ac1b-4be5-9b20-a326f932167b.jpeg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F4decb1fa-ac1b-4be5-9b20-a326f932167b.jpeg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 3184816969323910,
+								"url": "https://www.business-standard.com/finance/personal-finance/beware-of-parcel-fraud-suspect-a-scam-call-disengage-immediately-124043000976_1.html?utm_source=pocket-newtab-en-intl",
+								"title": "Beware of Parcel Fraud: Suspect a Scam Call? Disengage Immediately",
+								"excerpt": "Shreyanshi Singh (name changed on request), a 32-year-old who works with an advertising agency in Delhi, recently received a call during work hours.",
+								"domain": "Business Standard",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/60d385d6-efdf-4832-aaa6-3f957155c579.jpeg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F60d385d6-efdf-4832-aaa6-3f957155c579.jpeg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 852495927390513,
+								"url": "https://www.fortuneindia.com/long-reads/the-brief-recalibration-of-tata/116677?utm_source=pocket-newtab-en-intl",
+								"title": "The Brief: Recalibration of Tata",
+								"excerpt": "Tata Group attempts mergers and demergers in companies to bring sharper focus on businesses.",
+								"domain": "Fortune India",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/64f1200b-fe7d-4677-9fee-86a55414ce24.jpeg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F64f1200b-fe7d-4677-9fee-86a55414ce24.jpeg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 1889632268632429,
+								"url": "https://psyche.co/guides/how-to-use-kitchen-therapy-to-nourish-your-sense-of-self?utm_source=pocket-newtab-en-intl",
+								"title": "How to Use Cooking As a Form of Therapy",
+								"excerpt": "No matter your culinary skills, spend some reflective time in the kitchen to nourish and renew your sense of self.",
+								"domain": "Psyche",
+								"raw_image_src": "https://images.aeonmedia.co/images/8a20e692-e6c8-4b87-9a5f-37427137e162/sq-final-gettyimages-935951790.jpg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fimages.aeonmedia.co%2Fimages%2F8a20e692-e6c8-4b87-9a5f-37427137e162%2Fsq-final-gettyimages-935951790.jpg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 4145060320681061,
+								"url": "https://www.cnbc.com/2024/05/06/career-consultant-says-gen-z-are-misusing-ai-to-generate-cover-letters.html?utm_source=pocket-newtab-en-intl",
+								"title": "‘Exact Same Cover Letters Word for Word’: Career Consultant Says Gen Z Are Misusing AI",
+								"excerpt": "A career consultant said employers are receiving \"identical\" cover letters from Gen Z generated by ChatGPT: \"It's not being used in the right way.\"",
+								"domain": "CNBC",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/f70ffaf0-15ce-4a13-824a-f70397b7e3c7.jpeg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Ff70ffaf0-15ce-4a13-824a-f70397b7e3c7.jpeg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 1527034611070369,
+								"url": "https://www.bbc.com/news/world-asia-india-68553175?utm_source=pocket-newtab-en-intl",
+								"title": "Bollywood Meets Ballots: Reel and Real in Indian Elections",
+								"excerpt": "\"All of Kashmir was, is and will remain a part of India,\" says actor Kiran Karmarkar in a recent hit film on the government's 2019 decision to revoke Indian-administered Kashmir's autonomy.",
+								"domain": "BBC",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/dc7dee15-8198-4b55-98f3-08509b8186bc.jpeg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fdc7dee15-8198-4b55-98f3-08509b8186bc.jpeg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 3892484415808952,
+								"url": "https://www.theguardian.com/games/2024/may/03/dungeons-and-dragons-wizards-of-the-coast?utm_source=pocket-newtab-en-intl",
+								"title": "Stop Trying to Turn Dungeons & Dragons Into a Marvel-Esque Cash Cow – It Won’t Work",
+								"excerpt": "The words hit players of the world’s favourite tabletop role playing game like a magic missile straight to the heart.",
+								"domain": "The Guardian",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/845f030d-cfa2-476f-8176-4dfa3276b000.jpeg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F845f030d-cfa2-476f-8176-4dfa3276b000.jpeg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 3017838691371570,
+								"url": "https://restofworld.org/2024/dead-relatives-ai-deepfake-india/?utm_source=pocket-newtab-en-intl",
+								"title": "Indian Politicians Are Bringing the Dead on the Campaign Trail, With Help From AI",
+								"excerpt": "Last month, movie star-turned-politician Vijay Vasanth was campaigning in an open jeep under an unforgiving sun in the sleepy fishing town of Kanniyakumari, the southernmost tip of the Indian mainland. He periodically waved to the fisherfolk lined up on either side of the street.",
+								"domain": "Rest of World",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/eec652f8-9c84-4f7e-91f3-d9aeabd35b54.jpeg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Feec652f8-9c84-4f7e-91f3-d9aeabd35b54.jpeg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 4198646506301882,
+								"url": "https://www.newyorker.com/news/essay/shibboleth-the-role-of-words-in-the-campus-protests?utm_source=pocket-newtab-en-intl",
+								"title": "Shibboleth",
+								"excerpt": "A philosophy without a politics is common enough. Aesthetes, ethicists, novelists—all may be easily critiqued and found wanting on this basis. But there is also the danger of a politics without a philosophy.",
+								"domain": "The New Yorker",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/97994cb2-4537-463b-be48-18fc57ed0396.jpeg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F97994cb2-4537-463b-be48-18fc57ed0396.jpeg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 321728330627402,
+								"url": "https://www.nature.com/articles/d41586-024-01284-1?utm_source=pocket-newtab-en-intl",
+								"title": "Scientists Tried to Give People COVID — and Failed",
+								"excerpt": "Researchers deliberately infect participants with SARS-CoV-2 in ‘challenge’ trials — but high levels of immunity complicate efforts to test vaccines and treatments.",
+								"domain": "Nature",
+								"raw_image_src": "https://media.nature.com/lw1200/magazine-assets/d41586-024-01284-1/d41586-024-01284-1_27039006.jpg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fmedia.nature.com%2Flw1200%2Fmagazine-assets%2Fd41586-024-01284-1%2Fd41586-024-01284-1_27039006.jpg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 2759330110642114,
+								"url": "https://www.filmcompanion.in/features/indepth-stories/the-misogyny-in-mass-telugu-cinema-family-star-animal-tillu-square-vijay-deverakonda-amazon-prime-video?utm_source=pocket-newtab-en-intl",
+								"title": "The Misogyny in Mass Telugu Cinema",
+								"excerpt": "It’s increasingly apparent that mainstream Telugu cinema has a sexism problem, one that has roots in the past, one that becomes more visible as its audiences expand and grow more discerning.",
+								"domain": "Film Companion",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/600f8186-e378-4b32-8f2c-3ba43bc1377b.jpeg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F600f8186-e378-4b32-8f2c-3ba43bc1377b.jpeg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 3852373919305164,
+								"url": "https://indianexpress.com/article/explained/explained-global/indians-germany-largest-community-international-students-9311803/?utm_source=pocket-newtab-en-intl",
+								"title": "How Indians Became Germany’s Largest Community of International Students",
+								"excerpt": "A record 43,000 students are presently enrolled in German universities. Here is why Germany has emerged as a top destination for Indian studentds.",
+								"domain": "The Indian Express",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/031cd222-52b3-402e-81c0-71d0854a9d19.jpeg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F031cd222-52b3-402e-81c0-71d0854a9d19.jpeg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 3521059159703058,
+								"url": "https://www.theverge.com/2024/5/4/24144763/ai-chatbot-friends-character-teens?utm_source=pocket-newtab-en-intl",
+								"title": "The Teens Making Friends With AI Chatbots",
+								"excerpt": "“I’m not going to lie. I think I may be a little addicted to it.”",
+								"domain": "The Verge",
+								"raw_image_src": "https://cdn.vox-cdn.com/thumbor/4Z51Hk5L0WdVH2VKPLPOV5iL8yw=/0x0:2040x1360/1200x628/filters:focal(1081x719:1082x720)/cdn.vox-cdn.com/uploads/chorus_asset/file/25425111/247098_Teens_and_Character.AI_ASu.jpg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fcdn.vox-cdn.com%2Fthumbor%2F4Z51Hk5L0WdVH2VKPLPOV5iL8yw%3D%2F0x0%3A2040x1360%2F1200x628%2Ffilters%3Afocal(1081x719%3A1082x720)%2Fcdn.vox-cdn.com%2Fuploads%2Fchorus_asset%2Ffile%2F25425111%2F247098_Teens_and_Character.AI_ASu.jpg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 4045379836766573,
+								"url": "https://time.com/6972088/golden-retriever-boyfriend-masculinity-essay/?utm_source=pocket-newtab-en-intl",
+								"title": "What Golden Retriever Boyfriends Tell Us About Masculinity",
+								"excerpt": "Golden Retriever boyfriends aren’t new. But the way we perceive masculinity is, writes Myisha Battle.",
+								"domain": "Time",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/15f6abc0-39cc-47a9-ae3e-1d382c40785d.jpeg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F15f6abc0-39cc-47a9-ae3e-1d382c40785d.jpeg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 16851482451293,
+								"url": "https://thewire.in/the-arts/beethovens-ninth-symphony-200-years-of-an-iconic-work-of-art?utm_source=pocket-newtab-en-intl",
+								"title": "Beethoven’s Ninth Symphony: 200 Years of an Iconic Work of Art",
+								"excerpt": "The enthusiastic response to the symphony’s debut performance presaged its reception in the European music community, globally and across time.",
+								"domain": "The Wire",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/5297ed60-b2fa-4cf5-b400-b68bd9b8ad75.jpeg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F5297ed60-b2fa-4cf5-b400-b68bd9b8ad75.jpeg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 3479265221653541,
+								"url": "https://timesofindia.indiatimes.com/life-style/food-news/explained-why-armpit-sweat-infused-rice-balls-are-trending/articleshow/109865008.cms?utm_source=pocket-newtab-en-intl",
+								"title": "Explained: Why Armpit-Sweat-Infused Rice Balls Are Trending",
+								"excerpt": "Japan’s bizarre armpit-sweat-infused rice balls trend, prepared using armpits instead of hands, sparks mixed reactions. Despite hygiene concerns, scholars support the trend citing armpit significance and pheromones. Social media debates continue.",
+								"domain": "The Times of India",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/c0688c0f-7557-41de-af3e-3bf6da07e1c2.jpeg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fc0688c0f-7557-41de-af3e-3bf6da07e1c2.jpeg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 246287531717655,
+								"url": "https://www.thrillist.com/news/nation/airport-coffee-aeropress-espresso-travel-trend?utm_source=pocket-newtab-en-intl",
+								"title": "The Lengths People Are Going to Avoid Drinking Airport Coffee",
+								"excerpt": "Pro tip: You can skip the line if you make your own. ",
+								"domain": "Thrillist",
+								"raw_image_src": "https://assets3.thrillist.com/v1/image/3178310/1200x600/scale;;webp=auto;jpeg_quality=85.jpg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fassets3.thrillist.com%2Fv1%2Fimage%2F3178310%2F1200x600%2Fscale%3B%3Bwebp%3Dauto%3Bjpeg_quality%3D85.jpg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 3804251327566529,
+								"url": "https://link.newyorker.com/click/35266947.3736623/aHR0cHM6Ly93d3cubmV3eW9ya2VyLmNvbS9jdWx0dXJlL3RoZS13ZWVrZW5kLWVzc2F5L3RoZS1oaWRkZW4tcHJlZ25hbmN5LWV4cGVyaW1lbnQ_dXRtX3NvdXJjZT1ubCZ1dG1fYnJhbmQ9dG55JnV0bV9tYWlsaW5nPVROWV9EYWlseV8wNTA0MjQmdXRtX2NhbXBhaWduPWF1ZC1kZXYmdXRtX21lZGl1bT1lbWFpbCZ1dG1fdGVybT10bnlfZGFpbHlfZGlnZXN0JmJ4aWQ9NjQxZTA4MDhlNDM4N2EwOGQ1MDY3ODVjJmNuZGlkPTczMzMyMjk4Jmhhc2hhPTY1ZjcyZjllZmFkYmI2OGIxMWE4MmYwYzAwMzM0NDRmJmhhc2hiPTU5ZGY5Y2FjM2FkYTNkZmUxNjQ5NjczNzkyODZjMTViY2ZmNThiOGMmaG?utm_source=pocket-newtab-en-intl",
+								"title": "The Hidden-Pregnancy Experiment",
+								"excerpt": "We are increasingly trading our privacy for a sense of security. Becoming a parent showed me how tempting, and how dangerous, that exchange can be.",
+								"domain": "The New Yorker",
+								"raw_image_src": "https://media.newyorker.com/photos/66326e7614f7f2e3ee31eac9/16:9/w_1280,c_limit/Tolentino_pregnancy_surveillance_wide.jpg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fmedia.newyorker.com%2Fphotos%2F66326e7614f7f2e3ee31eac9%2F16%3A9%2Fw_1280%2Cc_limit%2FTolentino_pregnancy_surveillance_wide.jpg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 290763488456629,
+								"url": "https://indianexpress.com/article/explained/explained-health/cancer-cases-india-9311917/?utm_source=pocket-newtab-en-intl",
+								"title": "Why Are Cancer Cases Soaring in India?",
+								"excerpt": "Praful Reddy, 49, an IT professional from southern Andhra Pradesh state, suffers from lung cancer and has been undergoing targeted therapy, chemotherapy, and radiation to stop its spread since he was diagnosed two years ago.",
+								"domain": "The Indian Express",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/13af9f97-afb3-4932-addb-533d3329c91b.jpeg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F13af9f97-afb3-4932-addb-533d3329c91b.jpeg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 350662495067101,
+								"url": "https://www.inc.com/kevin-feig/beach-reads-for-personal-finance.html?utm_source=pocket-newtab-en-intl",
+								"title": "Beach Reads for Personal Finance",
+								"excerpt": "I've read many books about personal finance and even written one. Some are terrific, most are terribly boring and technical, and a handful should be avoided at all costs. To help you upskill your financial literacy while lying on the beach this summer, below are my top recommendations:",
+								"domain": "Inc. Magazine",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/984af2c2-28ea-432d-8d11-b86846778f6e.jpeg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F984af2c2-28ea-432d-8d11-b86846778f6e.jpeg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 1903941152029749,
+								"url": "https://www.wired.com/story/translation-tech-is-amazing-except-when-its-not/?utm_source=pocket-newtab-en-intl",
+								"title": "Translation Tech Is Amazing, Except When It’s Not",
+								"excerpt": "We can hold surprisingly deep conversations across languages using simple apps on our phones. But even as these apps get a fresh boost from AI, they can still lead to some awkward moments.",
+								"domain": "WIRED",
+								"raw_image_src": "https://media.wired.com/photos/66356649588f131dd8d770a5/191:100/w_1280,c_limit/Translation-Tech-Gear-GettyImages-1417723053.jpg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fmedia.wired.com%2Fphotos%2F66356649588f131dd8d770a5%2F191%3A100%2Fw_1280%2Cc_limit%2FTranslation-Tech-Gear-GettyImages-1417723053.jpg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 2549349995671568,
+								"url": "https://www.livemint.com/science/news/moon-sample-return-mission-chinas-change-6-change-7-vs-indias-chandrayaan-4-mission-11714840810091.html?utm_source=pocket-newtab-en-intl",
+								"title": "Moon Sample Return Mission: China’s Chang’e 6 Vs India’s Chandrayaan-4 Mission",
+								"excerpt": "Here’s a look at the difference between China’s latest Chang’e-6 mission, its 2026 mission, Chang’e 7, which aims to explore lunar south pole and India’s Chandrayaan 4 mission.",
+								"domain": "Mint",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/33290da0-d710-4f3a-b6b2-d26fd71aabe2.jpeg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F33290da0-d710-4f3a-b6b2-d26fd71aabe2.jpeg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 130296402543718,
+								"url": "https://www.campaignasia.com/article/the-changing-face-of-political-ad-campaigns-in-india/495868?utm_source=pocket-newtab-en-intl",
+								"title": "The Changing Face of Political Ad Campaigns in India",
+								"excerpt": "The world of political ad campaigning has changed drastically in India over the past decade. Transitioning from conventional tools like newspapers, television, and radio, political ad campaigns have now become predominantly digital.",
+								"domain": "Campaign Asia",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/d94af00e-7747-4b54-827f-8c7f7bc1537f.jpeg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fd94af00e-7747-4b54-827f-8c7f7bc1537f.jpeg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 3574000696187408,
+								"url": "https://www.deccanchronicle.com/sports/indian-womens-and-mens-4x400m-relay-teams-qualify-for-paris-olympics-892692?utm_source=pocket-newtab-en-intl",
+								"title": "Indian Women’s and Men’s 4x400m Relay Teams Qualify for Paris Olympics",
+								"excerpt": "In the women's competition, the quartet of Rupal Chaudhary, M R Poovamma, Jyothika Sri Dandi and Subha Venkatesan clocked 3 minutes and 29.35 seconds to finish second behind Jamaica (3:28.54) in heat number one to book a Paris Games ticket.",
+								"domain": "The Deccan Chronicle",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/6c1df7b4-bfa9-4b69-afb7-f70ee580d931.jpeg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F6c1df7b4-bfa9-4b69-afb7-f70ee580d931.jpeg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 4332726081047284,
+								"url": "https://www.outlookindia.com/sports/others/all-india-chess-federation-chief-nitin-narang-announces-rs-65-cr-budget-for-bharatiya-chess-ecosystem?utm_source=pocket-newtab-en-intl",
+								"title": "All-India Chess Federation Chief Announces Rs 65 Cr Budget for ‘Bharatiya Chess’ Ecosystem",
+								"excerpt": "The president of the All-India Chess Federation Nitin Narang on Saturday announced a Rs 65 crore budget to bolster the ‘Bharatiya Chess’ and its ecosystem to unparalleled heights",
+								"domain": "Outlook India",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/2a687394-318c-415b-9bfd-6136abec24aa.jpeg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F2a687394-318c-415b-9bfd-6136abec24aa.jpeg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 1228122509181540,
+								"url": "https://indianexpress.com/article/explained/explained-economics/indigo-wide-body-aircraft-order-international-9309030/?utm_source=pocket-newtab-en-intl",
+								"title": "IndiGo’s Wide-Body Aircraft Order: What Makes Long-Haul, Low-Cost Air Travel a Tough Nut to Crack?",
+								"excerpt": "After ruling the Indian skies, India’s largest airline is now attempting to make a mark globally with non-stop, long-haul and low-cost flights from Indian airports. But airlines have been trying to do so for years, and most have failed the test. ",
+								"domain": "The Indian Express",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/cbb81bfb-929f-4e76-8b53-08a8c133fd20.jpeg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fcbb81bfb-929f-4e76-8b53-08a8c133fd20.jpeg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 4058885519688389,
+								"url": "https://lithub.com/finding-a-home-in-stories-10-new-childrens-books-to-read-in-may/?utm_source=pocket-newtab-en-intl",
+								"title": "Finding a Home in Stories: 10 New Children’s Books to Read in May",
+								"excerpt": "In each of the new children’s books that delighted me this month, home looks a little different. ",
+								"domain": "Literary Hub",
+								"raw_image_src": "https://s26162.pcdn.co/wp-content/uploads/2024/04/rabbit.png",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs26162.pcdn.co%2Fwp-content%2Fuploads%2F2024%2F04%2Frabbit.png&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 1552490351165444,
+								"url": "https://www.cnbctv18.com/photos/travel/destinations/scenic-hill-stations-in-southern-india-you-shouldnt-miss-this-summer-19406704.htm/?utm_source=pocket-newtab-en-intl",
+								"title": "Scenic Hill Stations in Southern India You Shouldn’t Miss This Summer",
+								"excerpt": "Southern India boasts an array of picturesque summer hostspots blessed with architecture, cool climates and serene surroundings. These destinations double up as some of the best places for a summer vacation.",
+								"domain": "CNBC TV18",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/89a677dc-d54b-4989-ab68-04f76ae2bba4.jpeg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F89a677dc-d54b-4989-ab68-04f76ae2bba4.jpeg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 2842340303791564,
+								"url": "https://lifehacker.com/tech/how-to-give-away-less-personal-data?utm_source=pocket-newtab-en-intl",
+								"title": "Six Ways to Give Away Less of Your Personal Data",
+								"excerpt": "Data mining is how companies know things about you so they can serve you targeted ads and otherwise infiltrate your life. You can’t stop them, but here are the best ways you can slow them down.",
+								"domain": "Lifehacker",
+								"raw_image_src": "https://lifehacker.com/imagery/articles/01HWN5FTJFSGRE3G02R5YYMYR5/hero-image.fill.size_1200x675.jpg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Flifehacker.com%2Fimagery%2Farticles%2F01HWN5FTJFSGRE3G02R5YYMYR5%2Fhero-image.fill.size_1200x675.jpg&resize=w450",
+								"score": 1
+							},
+							{
+								"id": 3262515767116244,
+								"url": "https://www.polygon.com/what-to-play/24144632/best-board-games-2024-new?utm_source=pocket-newtab-en-intl",
+								"title": "The Best Board Games of 2024 so Far",
+								"excerpt": "Spend the rainy season inside with a great board game",
+								"domain": "Polygon",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/163941e4-2485-4c44-9068-6e8d15e2f008.jpeg",
+								"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F163941e4-2485-4c44-9068-6e8d15e2f008.jpeg&resize=w450",
+								"score": 1
+							}
+						],
+						"status": "success"
+					}
+				}
+			},
+			"loaded": true
+		},
+		"spocs": {
+			"spocs_endpoint": "https://spocs.getpocket.com/spocs",
+			"lastUpdated": 1715099024701,
+			"data": {},
+			"loaded": true,
+			"frequency_caps": [],
+			"blocked": [],
+			"placements": []
+		},
+		"experimentData": {
+			"utmSource": "pocket-newtab"
+		},
+		"recentSavesData": [],
+		"isUserLoggedIn": false,
+		"recentSavesEnabled": false,
+		"pocketButtonEnabled": true,
+		"saveToPocketCard": true,
+		"hideDescriptions": false,
+		"compactImages": false,
+		"imageGradient": false,
+		"newSponsoredLabel": false,
+		"titleLines": 3,
+		"descLines": 3,
+		"readTime": true
+	},
+	"Search": {
+		"fakeFocus": false,
+		"hide": false
+	}
+};
+
+	_:.      f;�hf;�fF�L�����       :about:home alt-data 1;77708,script version 20240418164957  ��

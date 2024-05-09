@@ -1,0 +1,13 @@
+{
+  "base_url": "/",
+  "hostname": "localhost",
+  "password": false,
+  "pid": 199953,
+  "port": 8909,
+  "root_dir": "/home/SRKrishna",
+  "secure": false,
+  "sock": "",
+  "token": "d7d745d87c9965ccd6f287ea3090e203ee5311fc1f8ca0dd",
+  "url": "http://localhost:8909/",
+  "version": "2.14.0"
+}

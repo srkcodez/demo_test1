@@ -1,0 +1,13 @@
+{
+  "shell_port": 32889,
+  "iopub_port": 49149,
+  "stdin_port": 34223,
+  "control_port": 58949,
+  "hb_port": 44765,
+  "ip": "127.0.0.1",
+  "key": "2d02dae1-354f9fe1079617dd7ad87a31",
+  "transport": "tcp",
+  "signature_scheme": "hmac-sha256",
+  "kernel_name": "python3",
+  "jupyter_session": "/home/SRKrishna/sample files/Linear_Regression-Year Prediction.ipynb"
+}
